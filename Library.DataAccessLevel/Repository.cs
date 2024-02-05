@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace Library.DataAccessLevel.Model
             this.Path = Path;
         }
 
-        bool CreateUser(RegistrationTemplate registrationTemplate)
+        public bool CreateUser(RegistrationTemplate registrationTemplate)
         {
             try
             {
@@ -26,7 +27,7 @@ namespace Library.DataAccessLevel.Model
 
                 using (LiteDatabase db = new LiteDatabase(Path))
                 {
-                    var result = db.GetCollection<RegistrationTemplate>("Path");
+                    var result = db.GetCollection<RegistrationTemplate>("RegistrationTemplate");
 
                     result.Insert(registrationTemplate);
 
@@ -43,6 +44,57 @@ namespace Library.DataAccessLevel.Model
                 }
                 return false;
             }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public bool DeleteUser(int Id)
+        {
+            try
+            {
+                using (LiteDatabase db = new LiteDatabase(Path))
+                {
+                    var result = db.GetCollection<RegistrationTemplate>("RegistrationTemplate");
+
+                    result.Delete(Id);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                using (StreamWriter sw = File.AppendText("Log.txt"))
+                {
+                    sw.WriteLine(ex.Message);
+                }
+                return false;
+            }
+        }
+        /// <summary>
+        /// Return registratin panel
+        /// </summary>
+        /// <returns></returns>
+        public List<RegistrationTemplate> registrationTemplates()
+        {
+            try
+            {
+                using (LiteDatabase db = new LiteDatabase(Path))
+                {
+                    var result = db.GetCollection<RegistrationTemplate>("RegistrationTemplate");
+
+                    return result.FindAll().ToList();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                using (StreamWriter sw = File.AppendText("Log.txt"))
+                {
+                    sw.WriteLine(ex.Message);
+                }
+            }
+            return null;
         }
     }
 }

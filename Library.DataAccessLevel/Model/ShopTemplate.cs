@@ -8,26 +8,11 @@ namespace Library.DataAccessLevel.Model
 {
     public class ShopTemplate
     {
-       private int Id { get; set; }
+       public int Id { get; set; }
         
-       private string Name { get; set; }
+       public string Name { get; set; }
 
        
-
-
-
-
-
-
-        /// <summary>
-        /// Admin Panel
-        /// </summary>
-        public int Equality { 
-
-            set { Id = value; }
-
-            get { return Id; }
-        }
      
     }
 }

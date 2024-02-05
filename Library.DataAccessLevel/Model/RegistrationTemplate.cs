@@ -11,8 +11,9 @@ namespace Library.DataAccessLevel.Model
     {
       public int Id { get; set; }
       public string Name { get; set; }
-      
-      public Category Category { get; set; }
+      public DateTime CreateTime { get; set; }
+      public List<RegistrationTemplate> Lst { get; set; }
+      public RegistrationCategory registrationCategoryCategory { get; set; }
       
       
     }

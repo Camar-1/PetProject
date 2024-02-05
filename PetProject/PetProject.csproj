@@ -49,5 +49,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library.BussnessLogicLevel\Library.BussnessLogicLevel.csproj">
+      <Project>{8c58b240-9a38-47d0-9e44-e06ec5b6c740}</Project>
+      <Name>Library.BussnessLogicLevel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.DataAccessLevel\Library.DataAccessLevel.csproj">
+      <Project>{7378a43a-fd73-4c64-b16d-61cfff3ec09f}</Project>
+      <Name>Library.DataAccessLevel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

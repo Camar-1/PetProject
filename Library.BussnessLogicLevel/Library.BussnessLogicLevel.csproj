@@ -46,5 +46,11 @@
     <Compile Include="BLL\ReturnUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library.DataAccessLevel\Library.DataAccessLevel.csproj">
+      <Project>{7378a43a-fd73-4c64-b16d-61cfff3ec09f}</Project>
+      <Name>Library.DataAccessLevel</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\RegistrationCategory.cs" />
     <Compile Include="Model\RegistrationTemplate.cs" />
     <Compile Include="Model\ShopTemplate.cs" />
     <Compile Include="Repository.cs" />
