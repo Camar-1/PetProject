@@ -12,6 +12,7 @@ namespace Library.DataAccessLevel.Model
         
        public string Name { get; set; }
 
+       public List <ShopTemplate> products { get; set; }
        
      
     }

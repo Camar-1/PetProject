@@ -33,11 +33,15 @@ namespace PetProject
                     switch (choice)
                     {
                         case 1:
-                            Console.WriteLine("Email:");
+                            Console.WriteLine("Введите Email:");
                             string InputEmail = Console.ReadLine();
+                            Console.WriteLine("Введите Пароль?");
+                            string Password = Console.ReadLine();
                             RegistrationTemplate newRegistrationTemplate = new RegistrationTemplate()
                             {
-                                Name = InputEmail,
+                                Login = InputEmail,
+                                Password = Password,
+
                                 CreateTime = DateTime.Now,
 
                             };
@@ -61,7 +65,7 @@ namespace PetProject
 
                             foreach(var template in res)
                             {
-                                Console.WriteLine("Id:" + template.Id+ "Name:" + template.Name+"Date:" + template.CreateTime);
+                                Console.WriteLine("Id:" + template.Id+ "Name:" + template.Login +"Password: "+template.Password+ "Date:" + template.CreateTime);
                             }
 
                             break;
